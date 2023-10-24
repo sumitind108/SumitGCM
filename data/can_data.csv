@@ -1,0 +1,7 @@
+Timestamp,Vehicle_ID,Engine_RPM,Vehicle_Speed,Engine_Temperature,Fuel_Level,Oil_Pressure,Coolant_Level,Brake_Pedal_Position,Steering_Angle,Acceleration_Pedal_Position,Transmission_Oil_Temperature,Fuel_Consumption_Rate,Battery_Voltage,Engine_Load
+2023-10-15 08:00:00,ABC123,1500,60,95,75,40,80,30,15,50,70,10,13.5,75
+2023-10-15 08:01:00,ABC123,1600,61,96,76,41,81,31,16,51,71,11,13.6,76
+2023-10-15 08:02:00,ABC123,1550,62,97,77,42,82,32,17,52,72,12,13.7,77
+2023-10-15 08:03:00,ABC123,1580,63,98,78,43,83,33,18,53,73,13,13.8,78
+2023-10-15 08:04:00,ABC123,1520,64,99,79,44,84,34,19,54,74,14,13.9,79
+2023-10-15 08:05:00,ABC123,1510,65,100,80,45,85,35,20,55,75,15,14.0,80
