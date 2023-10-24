@@ -64,4 +64,4 @@ jobs:
         with:
           app-name: 'SumitGCM'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E35FAC18D68E41F884F388247C2D998A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1C56471FBB3B44C8BC56DE977FB13542 }}
