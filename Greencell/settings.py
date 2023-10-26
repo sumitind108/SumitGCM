@@ -113,7 +113,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [BASE_DIR / 'static']
+# STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'HelloGCM', 'static')]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -122,3 +123,24 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# settings.py
+
+# ...
+
+# Azure Storage Settings
+AZURE_ACCOUNT_NAME = 'candata0'
+AZURE_ACCOUNT_KEY = '+tLU7ZRvAUAuhWLb5Ti+91Q963ACruii+tjdQKvrlxMfMcUVZJ2BzVrukFNdmGwf+NX5EGXv8ieI+AStu7gbEQ=='
+AZURE_CONTAINER = 'candata'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+AZURE_CUSTOM_DOMAIN = 'candata0.blob.core.windows.net'
+STATIC_URL = 'https://candata0.blob.core.windows.net/candata/static/'
+
+
+# AZURE_CUSTOM_DOMAIN = f'candata0.blob.core.windows.net'
+# STATIC_URL = f'https://f'candata0.blob.core.windows.net'/candata/static/'
+
+# ...
+

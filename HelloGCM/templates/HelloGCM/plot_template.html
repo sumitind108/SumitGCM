@@ -1,17 +1,19 @@
-<!-- {% load static %}
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plot</title>
+    <title>Plots</title>
 </head>
-
 <body>
-    <h1>Plot</h1>
-    <img src="{% static 'admin/plot.png' %}" alt="CAN Data Plot">
-</body>
+    <h1>Plots</h1>
+    {% for plot_path in plot_paths %}
+        <img src="{% static plot_path %}" alt="Plot">
+        <img src="{% static 'Engine_RPM_plot.png' %}" alt="Engine RPM Plot">
 
-</html> -->
+    {% empty %}
+        <p>No plots available.</p>
+    {% endfor %}
+</body>
+</html>
