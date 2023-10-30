@@ -1,19 +1,56 @@
+<!-- plot_template.html -->
+
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plots</title>
+    <title>Engine RPM Plot</title>
 </head>
-<body>
-    <h1>Plots</h1>
-    {% for plot_path in plot_paths %}
-        <img src="{% static plot_path %}" alt="Plot">
-        <img src="{% static 'Engine_RPM_plot.png' %}" alt="Engine RPM Plot">
 
-    {% empty %}
-        <p>No plots available.</p>
-    {% endfor %}
+<body>
+    <h1>Engine RPM Plot</h1>
+    <img src="{% static 'Engine_RPM_plot.png' %}" alt="Engine RPM Plot">
+
+    <h1>Acceleration Pedal Positon plot</h1>
+    <img src="{% static 'Acceleration_Pedal_Position_plot.png' %}" alt="Acceleration Pedal Positon plot">
+
+    <h1>Battery Voltage plot</h1>
+    <img src="{% static 'Battery_Voltage_plot.png' %}" alt="Battery Voltage plot">
+
+    <h1>Break Pedal Position plot</h1>
+    <img src="{% static 'Brake_Pedal_Position_plot.png' %}" alt="Break Pedal Position plot">
+
+    <h1>Coolant Level Plot</h1>
+    <img src="{% static 'Coolant_Level_plot.png' %}" alt="Coolant Level Plot">
+
+    <h1>Engine Load Plot</h1>
+    <img src="{% static 'Engine_Load_plot.png' %}" alt="Engine Load Plot">
+
+    <h1>Engine Temprature plot</h1>
+    <img src="{% static 'Engine_Temperature_plot.png'%}" alt="Engine Temprature plot">
+
+    <h1>Fuel Consumption Rate plot</h1>
+    <img src="{% static 'Fuel_Consumption_Rate_plot.png'%}" alt="Fuel Consumption Rate plot">
+
+    <h1>Fuel Level Plot</h1>
+    <img src="{% static 'Fuel_Level_plot.png'%}" alt="Fuel Level Plot">
+
+    <h1>Oil Pressure plot</h1>
+    <img src="{% static 'Oil_Pressure_plot.png'%}" alt="Oil Pressure plot">
+
+    <h1>Steering Angle plot</h1>
+    <img src="{% static 'Steering_Angle_plot.png'%}" alt="Steering Angle plot">
+
+    <h1>Transmission Oil Temperature plot</h1>
+    <img src="{% static 'Transmission_Oil_Temperature_plot.png'%}" alt="Transmission Oil Temperature plot">
+
+    <h1>Vehicle Speed plot</h1>
+    <img src="{% static 'Vehicle_Speed_plot.png'%}" alt="Vehicle Speed plot">
+
 </body>
+
 </html>
