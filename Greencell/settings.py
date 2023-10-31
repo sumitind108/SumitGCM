@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'HelloGCM',
+
 ]
 
 MIDDLEWARE = [
@@ -136,6 +137,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AZURE_ACCOUNT_NAME = 'candata0'
 AZURE_ACCOUNT_KEY = '+tLU7ZRvAUAuhWLb5Ti+91Q963ACruii+tjdQKvrlxMfMcUVZJ2BzVrukFNdmGwf+NX5EGXv8ieI+AStu7gbEQ=='
 AZURE_CONTAINER = 'candata'
+
+# Define media and static containers
+AZURE_MEDIA_CONTAINER = 'candata'  # Assumes media files are stored in the 'candata' container
+AZURE_STATIC_CONTAINER = 'candata/static'  # Assumes static files are stored in the 'static' directory inside the 'candata' container
+
 
 DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 AZURE_CUSTOM_DOMAIN = 'candata0.blob.core.windows.net'
