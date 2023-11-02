@@ -1,6 +1,6 @@
 
 import os
-
+# from azure.storage.blob import BlobServiceClient
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -116,6 +116,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'HelloGCM', 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# Additional locations of static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'HelloGCM', 'static'),
+]
 
 
 # Default primary key field type
@@ -133,19 +137,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ...
 
-# Azure Storage Settings
-AZURE_ACCOUNT_NAME = 'candata0'
-AZURE_ACCOUNT_KEY = '+tLU7ZRvAUAuhWLb5Ti+91Q963ACruii+tjdQKvrlxMfMcUVZJ2BzVrukFNdmGwf+NX5EGXv8ieI+AStu7gbEQ=='
-AZURE_CONTAINER = 'candata'
+# # Azure Storage Settings
+# AZURE_ACCOUNT_NAME = 'gcmcandatapoc'
+# AZURE_ACCOUNT_KEY = '+tLU7ZRvAUAuhWLb5Ti+91Q963ACruii+tjdQKvrlxMfMcUVZJ2BzVrukFNdmGwf+NX5EGXv8ieI+AStu7gbEQ=='
+# AZURE_CONTAINER = 'candata'
 
-# Define media and static containers
-AZURE_MEDIA_CONTAINER = 'candata'  # Assumes media files are stored in the 'candata' container
-AZURE_STATIC_CONTAINER = 'candata/static'  # Assumes static files are stored in the 'static' directory inside the 'candata' container
+# # Define media and static containers
+# AZURE_MEDIA_CONTAINER = 'candata'  # Assumes media files are stored in the 'candata' container
+# AZURE_STATIC_CONTAINER = 'candata/static'  # Assumes static files are stored in the 'static' directory inside the 'candata' container
 
 
-DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-AZURE_CUSTOM_DOMAIN = 'candata0.blob.core.windows.net'
-STATIC_URL = 'https://candata0.blob.core.windows.net/candata/static/'
+# DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+# AZURE_CUSTOM_DOMAIN = 'candata0.blob.core.windows.net'
+# STATIC_URL = 'https://candata0.blob.core.windows.net/candata/static/'
 
 
 
