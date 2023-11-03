@@ -5,3 +5,4 @@ pandas==2.0.3
 matplotlib==3.7.2
 django-storages==1.14.2
 azure-storage-blob==12.18.3
+whitenoise==6.6.0
