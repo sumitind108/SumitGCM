@@ -1,13 +1,63 @@
 {% load static %}
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greencell Analytics</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 60px; /* Adjust the top padding to fit your header */
+        }
+
+        .navbar {
+            background-color: #007bff; /* Set your desired navbar background color */
+        }
+
+        .navbar-brand {
+            color: #fff !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Good Morning</h1>
-    <h1>Engine RPM Plot</h1>
-    <img src="{% static 'HelloGCM/Engine_RPM_plot.png' %}" alt="Engine RPM Plot">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Greencell Analytics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'plot_template' %}">View Plots</a>
+                    </li>
+                    <!-- Add more navigation items as needed -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <!-- Your page content goes here -->
+        <h1>Welcome to Greencell Analytics</h1>
+        <p>Explore insightful analytics and visualizations here.</p>
+    </div>
+
+    <!-- Bootstrap JavaScript and dependencies (ensure you have these libraries loaded) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
