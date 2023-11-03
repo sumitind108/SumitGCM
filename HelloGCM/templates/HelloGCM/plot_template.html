@@ -1,5 +1,3 @@
-<!-- plot_template.html -->
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -8,49 +6,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engine RPM Plot</title>
+
+    <title>Greencell Analytics</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .graph-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .graph-container img {
+            max-width: 100%;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function showGraph(graphId) {
+            var popup = document.getElementById('popup-' + graphId);
+            popup.style.display = 'flex';
+
+            var closeBtn = popup.querySelector('.close-btn');
+            closeBtn.addEventListener('click', function () {
+                popup.style.display = 'none';
+            });
+        }
+    </script>
 </head>
 
 <body>
-    <h1>Engine RPM Plot</h1>
-    <img src="{% static 'Engine_RPM_plot.png' %}" alt="Engine RPM Plot">
+    <div class="container">
+        <h1>Greencell Analytics Plots</h1>
 
-    <h1>Acceleration Pedal Positon plot</h1>
-    <img src="{% static 'Acceleration_Pedal_Position_plot.png' %}" alt="Acceleration Pedal Positon plot">
+        <!-- Buttons for Each Plot -->
+        <div class="button-container">
+            <button onclick="showGraph('engine-rpm')">Engine RPM Plot</button>
+            <button onclick="showGraph('acceleration-pedal')">Acceleration Pedal Position Plot</button>
+            <button onclick="showGraph('battery-voltage')">Battery Voltage Plot</button>
+            <button onclick="showGraph('brake-pedal')">Brake Pedal Position Plot</button>
+            <button onclick="showGraph('coolant-level')">Coolant Level Plot</button>
+            <button onclick="showGraph('engine-load')">Engine Load Plot</button>
+            <button onclick="showGraph('engine-temperature')">Engine Temperature Plot</button>
+            <button onclick="showGraph('fuel-consumption')">Fuel Consumption Rate Plot</button>
+            <button onclick="showGraph('fuel-level')">Fuel Level Plot</button>
+            <button onclick="showGraph('oil-pressure')">Oil Pressure Plot</button>
+            <button onclick="showGraph('steering-angle')">Steering Angle Plot</button>
+            <button onclick="showGraph('transmission-temperature')">Transmission Oil Temperature Plot</button>
+            <button onclick="showGraph('vehicle-speed')">Vehicle Speed Plot</button>
+        </div>
 
-    <h1>Battery Voltage plot</h1>
-    <img src="{% static 'Battery_Voltage_plot.png' %}" alt="Battery Voltage plot">
+        <!-- Graph Containers -->
+        <div id="popup-engine-rpm" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Engine RPM Plot</h1>
+                <img src="{% static 'Engine_RPM_plot.png' %}" alt="Engine RPM Plot">
+            </div>
+        </div>
 
-    <h1>Break Pedal Position plot</h1>
-    <img src="{% static 'Brake_Pedal_Position_plot.png' %}" alt="Break Pedal Position plot">
+        <div id="popup-acceleration-pedal" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Acceleration Pedal Position Plot</h1>
+                <img src="{% static 'Acceleration_Pedal_Position_plot.png' %}" alt="Acceleration Pedal Position Plot">
+            </div>
+        </div>
 
-    <h1>Coolant Level Plot</h1>
-    <img src="{% static 'Coolant_Level_plot.png' %}" alt="Coolant Level Plot">
+        <!-- Add popup containers for other graphs similarly -->
 
-    <h1>Engine Load Plot</h1>
-    <img src="{% static 'Engine_Load_plot.png' %}" alt="Engine Load Plot">
+        <div id="popup-battery-voltage" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Battery Voltage Plot</h1>
+                <img src="{% static 'Battery_Voltage_plot.png' %}" alt="Battery Voltage Plot">
+            </div>
+        </div>
 
-    <h1>Engine Temprature plot</h1>
-    <img src="{% static 'Engine_Temperature_plot.png'%}" alt="Engine Temprature plot">
 
-    <h1>Fuel Consumption Rate plot</h1>
-    <img src="{% static 'Fuel_Consumption_Rate_plot.png'%}" alt="Fuel Consumption Rate plot">
 
-    <h1>Fuel Level Plot</h1>
-    <img src="{% static 'Fuel_Level_plot.png'%}" alt="Fuel Level Plot">
+        <div id="popup-brake-pedal" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Brake Pedal Position Plot</h1>
+                <img src="{% static 'Brake_Pedal_Position_plot.png' %}" alt="Brake Pedal Position Plot">
+            </div>
+        </div>
 
-    <h1>Oil Pressure plot</h1>
-    <img src="{% static 'Oil_Pressure_plot.png'%}" alt="Oil Pressure plot">
 
-    <h1>Steering Angle plot</h1>
-    <img src="{% static 'Steering_Angle_plot.png'%}" alt="Steering Angle plot">
+        <div id="popup-coolant-level" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Coolant Level Plot</h1>
+                <img src="{% static 'Coolant_Level_plot.png' %}" alt="Coolant Level Plot">
+            </div>
+        </div>
 
-    <h1>Transmission Oil Temperature plot</h1>
-    <img src="{% static 'Transmission_Oil_Temperature_plot.png'%}" alt="Transmission Oil Temperature plot">
 
-    <h1>Vehicle Speed plot</h1>
-    <img src="{% static 'Vehicle_Speed_plot.png'%}" alt="Vehicle Speed plot">
+        <div id="popup-engine-load" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Engine Load Plot</h1>
+                <img src="{% static 'Engine_Load_plot.png' %}" alt="Engine Load Plot">
+            </div>
+        </div>
 
+
+        <div id="popup-engine-temperature" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Engine Temperature Plot</h1>
+                <img src="{% static 'Engine_Temperature_plot.png' %}" alt="Engine Temperature Plot">
+            </div>
+        </div>
+
+        <div id="popup-fuel-consumption" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Fuel Consumption Rate Plot</h1>
+                <img src="{% static 'Fuel_Consumption_Rate_plot.png' %}" alt="Fuel Consumption Rate Plot">
+            </div>
+        </div>
+
+        <div id="popup-fuel-level" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Fuel Level Plot</h1>
+                <img src="{% static 'Fuel_Level_plot.png' %}" alt="Fuel Level Plot">
+            </div>
+        </div>
+
+        <div id="popup-oil-pressure" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Oil Pressure Plot</h1>
+                <img src="{% static 'Oil_Pressure_plot.png' %}" alt="Oil Pressure Plot">
+            </div>
+        </div>
+
+        <div id="popup-steering-angle" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Steering Angle Plot</h1>
+                <img src="{% static 'Steering_Angle_plot.png' %}" alt="Steering Angle Plot">
+            </div>
+        </div>
+
+        <div id="popup-transmission-temperature" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Transmission Oil Temperature Plot</h1>
+                <img src="{% static 'Transmission_Oil_Temperature_plot.png' %}" alt="Transmission Oil Temperature Plot">
+            </div>
+        </div>
+
+        <div id="popup-vehicle-speed" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1>Vehicle Speed Plot</h1>
+                <img src="{% static 'Vehicle_Speed_plot.png' %}" alt="Vehicle Speed Plot">
+            </div>
+        </div>
+
+
+
+
+    </div>
 </body>
 
 </html>
